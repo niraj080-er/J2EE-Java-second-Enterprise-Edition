@@ -28,14 +28,14 @@ public class FirstServlate  extends HttpServlet{
 //        out.println("</body></html>");
         
         out.println("<html><body bgcolor='red'> "
-        		+ "<h1> Student Name is" +sname+"from"+dept+ "</h1>"
+        		+ "<h1> Student Name is " +sname+" from "+dept+ " </h1>"
         		+"</body></html> ");
         out.close();
         java.sql.Connection con=null;
         PreparedStatement pstm=null;
         try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://locahost:3306?user=root&password=admin");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=admin");
 			pstm=con.prepareStatement("insert into btm.student values(?,?,?,?)");
 			pstm.setInt(1,Integer.parseInt(sid));
 			pstm.setString(2, sname);
